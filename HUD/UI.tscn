@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=1]
+[ext_resource path="res://HUD/Menu.gd" type="Script" id=2]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="HUD" type="Control" parent="."]
+margin_left = 0.67189
+margin_top = 1.35938
+margin_right = 405.672
+margin_bottom = 88.3594
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+margin_right = 1024.0
+margin_bottom = 20.0
+color = Color( 0.054902, 0.0509804, 0.0509804, 0.509804 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="HUD"]
+margin_left = 512.0
+margin_right = 1024.0
+margin_bottom = 20.0
+text = "Score"
+align = 2
+valign = 1
+
+[node name="Lives" type="Label" parent="HUD"]
+margin_right = 512.0
+margin_bottom = 20.0
+text = "Lives"
+valign = 1
+
+[node name="Health" type="Label" parent="HUD"]
+margin_left = 2.13419
+margin_top = -1.37502
+margin_right = 1026.13
+margin_bottom = 18.625
+text = "Health"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.392157 )
+
+[node name="Label" type="Label" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -209.0
+text = "Save and Load"
+align = 1
+valign = 1
+
+[node name="Save" type="Button" parent="Menu"]
+margin_left = 462.0
+margin_top = 300.0
+margin_right = 562.0
+margin_bottom = 340.0
+text = "Save"
+
+[node name="Load" type="Button" parent="Menu"]
+margin_left = 462.825
+margin_top = 360.0
+margin_right = 562.825
+margin_bottom = 400.0
+text = "Load"
+[connection signal="pressed" from="Menu/Save" to="Menu" method="_on_Save_pressed"]
+[connection signal="pressed" from="Menu/Load" to="Menu" method="_on_Load_pressed"]
